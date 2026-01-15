@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smart-health-backend
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4096M
+        reservations:
+          cpus: '1'
+          memory: 2048M
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=app.py
+      # Database configuration - update these with your actual values
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=your_password_here
+      - DB_NAME=smart_health_sense
+      - JWT_SECRET_KEY=jwt-smart-health-sense
+    depends_on:
+      - mysql
+    volumes:
+      - ./static/uploads:/app/static/uploads
+    restart: unless-stopped
+
+  # Optional MySQL service
+  mysql:
+    image: mysql:8.0
+    container_name: smart-health-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=your_password_here
+      - MYSQL_DATABASE=smart_health_sense
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

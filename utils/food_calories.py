@@ -1,0 +1,16 @@
+FOOD_CALORIES = {
+    "Ayam Goreng": 295,
+    "Burger": 266,
+    "French Fries": 320,
+    "Gado-Gado": 80,
+    "Ikan Goreng": 180,
+    "noodles": 221,
+    "Mie Goreng": 278,
+    "Nasi Goreng": 255,
+    "Nasi Padang": 233,
+    "Pizza": 243,
+    "Rawon": 227,
+    "Rendang": 230,
+    "Sate": 170,
+    "Soto": 140,
+}

@@ -1,0 +1,29 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment & Secrets
+.env
+firebase-service-account.json
+google-services.json
+smarthealthsense-4548d-firebase-adminsdk-fbsvc-719cb8ac1a.json
+
+# Flask
+instance/
+*.sqlite3
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# model chatbot
+model/chatbot/
+firebase-service-account.json 
+.env 
+firebase-service-account.json 
+smarthealthsense-4548d-firebase-adminsdk-fbsvc-719cb8ac1a.json 
+.env 
